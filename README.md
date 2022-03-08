@@ -1,3 +1,5 @@
+This repo is forked from wolfMQTT.  It includes minor edits designed to make the wolfMQTT library work better with Azure Sphere.  
+
 # wolfMQTT
 
 This is an implementation of the MQTT Client written in C for embedded use, which supports SSL/TLS via the wolfSSL library. This library was built from the ground up to be multi-platform, space conscious and extensible. Integrates with wolfSSL to provide TLS support.
