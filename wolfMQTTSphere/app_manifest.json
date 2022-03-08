@@ -1,0 +1,15 @@
+{
+  "SchemaVersion": 1,
+  "Name": "wolfMQTTSphere",
+  "ComponentId": "2d8d3143-5173-4d4e-8710-b53f88544f97",
+  "EntryPoint": "/bin/app",
+  "CmdArgs": [],
+  "Capabilities": {
+    "NetworkConfig": true,
+    "WifiConfig": true,
+    "AllowedConnections": [
+      ""
+    ]
+  },
+  "ApplicationType": "Default"
+}
