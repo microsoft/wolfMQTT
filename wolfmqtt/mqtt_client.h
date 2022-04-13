@@ -278,7 +278,7 @@ WOLFMQTT_API int MqttClient_Connect(
                             with message data
  *                          Note: MqttPublish and MqttMessage are same
                             structure.
- *  \return     MQTT_CODE_SUCCESS, MQTT_CODE_CONTINUE (for non-blocking) or 
+ *  \return     MQTT_CODE_SUCCESS, MQTT_CODE_CONTINUE (for non-blocking) or
                 MQTT_CODE_ERROR_* (see enum MqttPacketResponseCodes)
     \sa         MqttClient_Publish_WriteOnly
     \sa         MqttClient_Publish_ex
@@ -312,7 +312,7 @@ WOLFMQTT_API int MqttClient_Publish_ex(
 
 
 #ifdef WOLFMQTT_MULTITHREAD
-/*! \brief      Same as MqttClient_Publish_ex, however this API will only 
+/*! \brief      Same as MqttClient_Publish_ex, however this API will only
                 perform writes and requires another thread to handle the read
                 ACK processing using MqttClient_WaitMessage_ex
  *  \note       This function that will wait for MqttNet.read to complete,
@@ -325,7 +325,7 @@ WOLFMQTT_API int MqttClient_Publish_ex(
                             with message data
  *                          Note: MqttPublish and MqttMessage are same
                             structure.
- *  \return     MQTT_CODE_SUCCESS, MQTT_CODE_CONTINUE (for non-blocking) or 
+ *  \return     MQTT_CODE_SUCCESS, MQTT_CODE_CONTINUE (for non-blocking) or
                 MQTT_CODE_ERROR_* (see enum MqttPacketResponseCodes)
     \sa         MqttClient_Publish
     \sa         MqttClient_Publish_ex

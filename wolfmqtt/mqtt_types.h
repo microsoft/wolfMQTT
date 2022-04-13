@@ -65,10 +65,9 @@
 #endif
 
 #ifdef ENABLE_MQTT_TLS
-    #if !defined(WOLFSSL_USER_SETTINGS) && !defined(USE_WINDOWS_API)
-        #include <wolfssl/options.h>
-    #endif
+    #if !defined(AZURE_SPHERE)
     #include <wolfssl/wolfcrypt/settings.h>
+    #endif
     #include <wolfssl/ssl.h>
     #include <wolfssl/wolfcrypt/types.h>
     #include <wolfssl/wolfcrypt/error-crypt.h>
@@ -152,20 +151,26 @@
     #include <stdio.h>
 #endif
 
-/* Allow custom override of data types */
-#if !defined(WOLFMQTT_CUSTOM_TYPES) && !defined(WOLF_CRYPT_TYPES_H)
-    /* Basic Types */
-    #ifndef byte
-        typedef unsigned char  byte;
-    #endif
+#ifdef AZURE_SPHERE
     #ifndef word16
         typedef unsigned short word16;
     #endif
-    #ifndef word32
-        typedef unsigned int   word32;
+#else
+    /* Allow custom override of data types */
+    #if !defined(WOLFMQTT_CUSTOM_TYPES) && !defined(WOLF_CRYPT_TYPES_H)
+        /* Basic Types */
+        #ifndef byte
+            typedef unsigned char  byte;
+        #endif
+        #ifndef word16
+            typedef unsigned short word16;
+        #endif
+        #ifndef word32
+            typedef unsigned int   word32;
+        #endif
+        #define WOLFSSL_TYPES /* make sure wolfSSL knows we defined these types */
     #endif
-    #define WOLFSSL_TYPES /* make sure wolfSSL knows we defined these types */
-#endif
+#endif /*AZURE_SPHERE*/
 
 /* Response Codes */
 enum MqttPacketResponseCodes {

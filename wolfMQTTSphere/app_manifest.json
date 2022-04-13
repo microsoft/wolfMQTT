@@ -7,8 +7,10 @@
   "Capabilities": {
     "NetworkConfig": true,
     "WifiConfig": true,
+    "CertStore" : true,
+    "DeviceAuthentication":"enter-sphere-tenant-id-here",
     "AllowedConnections": [
-      ""
+      "000.000.0.00"
     ]
   },
   "ApplicationType": "Default"
