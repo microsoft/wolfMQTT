@@ -54,6 +54,7 @@ client.plist
 # other
 Debug
 .vs
+build/
 *.aps
 *.sdf
 *.user
